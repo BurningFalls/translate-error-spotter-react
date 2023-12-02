@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app{
+  width: 100%;
   display: flex;
+  justify-content: center;
+}
+
+.main{
+  width: 50%;
+  padding: 30px;
+}
+
+.header {
+  height: 70px;
+  display: flex;
+}
+
+.up-features {
+  margin-top: 30px;
+}
+
+textarea{
+  padding: 10px;
+  width: 100%;
+  min-height: 200px;
+  word-wrap: break-word;   /* Ensures that long words can break and wrap to the next line */
+  overflow-y: hidden;      /* Hides the vertical scrollbar */
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /*padding: 10px;           !* Optional: Adds some padding inside the textareas *!*/
+  font-size: 16px;
+  resize: none;
+  box-shadow: 0 2px 1.5px  0 #555555;
+}
+
+.verification-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.large-text {
+  font-size: 50px;
+  margin-right: 20px; /* 오른쪽 여백을 추가하여 텍스트 간격을 조절합니다. */
+  display: flex;
+  line-height: 55px;
+  align-items: flex-end;
+}
+
+.small-text {
+  font-size: 25px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.input-boxes {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  /*align-items: center; !* 세로 중앙 정렬 *!*/
+  font-size: 20px;
+}
+
+.korean-setting {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.english-setting{
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.input-box-1{
+  flex: 4;
+}
+.input-box-2{
+  flex: 4;
+}
+.right-arrow {
+  flex: 1;
+  display: flex;
+  padding-top: 50px ;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px; /* 화살표의 글꼴 크기 설정 */
+}
+
+.down-arrow {
+  font-size: 24px;
+}
+
+.text-box {
+  /*width: 200px;           !* Set the width of the textareas *!*/
+  word-wrap: break-word;   /* Ensures that long words can break and wrap to the next line */
+  overflow-y: auto;      /* Hides the vertical scrollbar */
+  min-height: 200px;        /* Minimum height for the textareas */
+  resize: none;            /* Disables the resize handle */
+  border: 1px solid #ccc;  /* Optional: Adds a border to the textareas */
+  padding: 10px;           /* Optional: Adds some padding inside the textareas */
+  font-size: 16px;         /* Optional: Sets the font size */
+  margin-right: 10px;
+}
+
+.error-spotter {
+  display: flex;
+}
+
+.result-box {
+  width: 200px;            /* Set the width of the textareas */
+  word-wrap: break-word;   /* Ensures that long words can break and wrap to the next line */
+  overflow-y: auto;      /* Hides the vertical scrollbar */
+  min-height: 200px;        /* Minimum height for the textareas */
+  resize: none;            /* Disables the resize handle */
+  border: 1px solid #ccc;  /* Optional: Adds a border to the textareas */
+  padding: 10px;           /* Optional: Adds some padding inside the textareas */
+  font-size: 16px;         /* Optional: Sets the font size */
+  margin-right: 10px;
+}
+
+.middle{
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+}
+.middle-box{
+  display: flex;
+  flex-direction: row;
+}
+.middle-box-wrap{
+  flex: 1;
+}
+
+.middle-box-wrap-wrap-L{
+  display: flex;
+  min-height: 80px;
   flex-direction: column;
+  margin-bottom: 20px;
+  /*border-left: solid 0.5px;*/
+  /*border-top: solid 0.5px;*/
+  /*border-bottom: solid 0.5px;*/
+  /*margin-bottom: 10px;*/
+}
+.middle-box-wrap-wrap-R{
+
+  display: flex;
+  min-height: 80px;
+  flex-direction: column;
+  margin-bottom: 20px;
+  /*border-right: solid 0.5px;*/
+  /*border-top: solid 0.5px;*/
+  /*border-bottom: solid 0.5px;*/
+  /*margin-bottom: 10px;*/
+}
+.middle-sentiment-box-L{
+  flex: 1;
+  height: 30px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: snow;
+  border-top-left-radius: 16px;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.middle-sentiment-box-R{
+  height: 30px;
+  border-top-right-radius: 16px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: snow;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.middle-sentiment-box div{
+
+}
+.middle-sentence-box{
+  display: flex;
+  width: 100%;
+
+  flex: 1;
+  padding: 5px 0 0 5px;
 }
