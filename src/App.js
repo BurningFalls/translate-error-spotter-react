@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import {MDBBtn, MDBIcon} from "mdb-react-ui-kit";
+import {MDBBtn, MDBIcon, MDBSpinner} from "mdb-react-ui-kit";
 import Footer from "./Footer";
 import Table from "./Table";
 
@@ -16,6 +16,7 @@ function App() {
   const [resultsKorean, setResultsKorean] = useState([]);
   const [resultsEnglish, setResultsEnglish] = useState([]);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // 로딩 상태 변수 추가
 
   const handleTextChange = (event, language) => {
     const newText = event.target.value;
@@ -41,6 +42,8 @@ function App() {
 
   const sendHttpRequest = useCallback(async (url, requestBody) => {
     try {
+      setIsLoading(true); // 데이터 요청 시작 시 isLoading을 true로 설정
+
       const response = await fetch(url, {
         method: 'POST', // 또는 원하는 HTTP 메서드
         headers: {
@@ -57,6 +60,8 @@ function App() {
       }
     } catch (error) {
       throw new Error(`HTTP 요청 오류: ${error.message}`);
+    } finally {
+      setIsLoading(false); // 데이터 요청 시작 시 isLoading을 true로 설정
     }
   }, []);
 
@@ -73,13 +78,19 @@ function App() {
       const koreanData = { text: textKorean };
       const englishData = {text: textEnglish};
 
-      const koreanResponse = await sendHttpRequest(koreanUrl, koreanData);
-      const englishResponse = await sendHttpRequest(englishUrl, englishData);
+      setIsLoading(true); // 데이터 요청 시작 시 isLoading을 true로 설정
+
+      const [koreanResponse, englishResponse] = await Promise.all([
+        sendHttpRequest(koreanUrl, koreanData),
+        sendHttpRequest(englishUrl, englishData),
+      ]);
 
       setResultsKorean(koreanResponse);
       setResultsEnglish(englishResponse);
     } catch (error) {
       console.error(error.message);
+    } finally {
+      setIsLoading(false); // 데이터 요청 완료 시 isLoading을 false로 설정
     }
   }, [textKorean, textEnglish, sendHttpRequest]);
 
@@ -142,8 +153,19 @@ function App() {
           </MDBBtn>
         </div>
 
-        <Table resultsKorean={resultsKorean} resultsEnglish={resultsEnglish} />
+        {isLoading && (
+          <div className="spinner" >
+            <MDBSpinner role='status'>
+              <span className='visually-hidden'>Loading...</span>
+            </MDBSpinner>
+          </div>
+        )}
 
+        {!isLoading && (
+          <div>
+            <Table resultsKorean={resultsKorean} resultsEnglish={resultsEnglish} />
+          </div>
+        )}
 
       <Footer/>
       </div>

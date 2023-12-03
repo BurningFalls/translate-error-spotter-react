@@ -8,18 +8,18 @@ export default function Table(props) {
   return (
     <div className="table-container">
       <MDBTable className="data-table">
-        <MDBTableHead>
-          <tr>
-            <th scope='col' className="korean-sentence">문장</th>
-            <th scope='col' className="korean-sentiment">감정</th>
-            <th scope='col'></th>
-            <th scope='col' className="english-sentiment">감정</th>
-            <th scope='col' className="english-sentence">문장</th>
-          </tr>
-        </MDBTableHead>
+        {/*<MDBTableHead>*/}
+        {/*  <tr>*/}
+        {/*    <th scope='col' className="korean-sentence">문장</th>*/}
+        {/*    <th scope='col' className="korean-sentiment">감정</th>*/}
+        {/*    <th scope='col'></th>*/}
+        {/*    <th scope='col' className="english-sentiment">감정</th>*/}
+        {/*    <th scope='col' className="english-sentence">문장</th>*/}
+        {/*  </tr>*/}
+        {/*</MDBTableHead>*/}
         <MDBTableBody>
           {resultsKorean.map((result, index) => (
-            <tr key={index}>
+            <tr key={index} className={`korean-sentiment ${result.sentiment !== resultsEnglish[index].sentiment ? 'different' : ''}`}>
               <td className="korean-sentence">{result.sentence}</td>
               <td className="korean-sentiment">{result.sentiment}</td>
               <td className="comparison">

@@ -5,7 +5,7 @@
 }
 
 .main{
-  width: 50%;
+  width: 70%;
   padding: 30px;
 }
 
@@ -36,7 +36,8 @@ textarea{
 .verification-button {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .large-text {
@@ -66,11 +67,13 @@ textarea{
   display: flex;
   align-items: center;
   justify-content: end;
+  font-size: 20px;
 }
 .english-setting{
   height: 50px;
   display: flex;
   align-items: center;
+  font-size: 20px;
 }
 .input-box-1{
   flex: 4;
@@ -119,3 +122,9 @@ textarea{
   margin-right: 10px;
 }
 
+.spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
