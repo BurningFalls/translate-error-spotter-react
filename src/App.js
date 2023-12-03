@@ -17,6 +17,7 @@ function App() {
   const [resultsEnglish, setResultsEnglish] = useState([]);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // 로딩 상태 변수 추가
+  const [isComplete, setIsComplete] = useState(false);
 
   const handleTextChange = (event, language) => {
     const newText = event.target.value;
@@ -42,7 +43,6 @@ function App() {
 
   const sendHttpRequest = useCallback(async (url, requestBody) => {
     try {
-      setIsLoading(true); // 데이터 요청 시작 시 isLoading을 true로 설정
 
       const response = await fetch(url, {
         method: 'POST', // 또는 원하는 HTTP 메서드
@@ -60,8 +60,6 @@ function App() {
       }
     } catch (error) {
       throw new Error(`HTTP 요청 오류: ${error.message}`);
-    } finally {
-      setIsLoading(false); // 데이터 요청 시작 시 isLoading을 true로 설정
     }
   }, []);
 
@@ -84,6 +82,8 @@ function App() {
         sendHttpRequest(koreanUrl, koreanData),
         sendHttpRequest(englishUrl, englishData),
       ]);
+
+      setIsComplete(true);
 
       setResultsKorean(koreanResponse);
       setResultsEnglish(englishResponse);
@@ -161,7 +161,7 @@ function App() {
           </div>
         )}
 
-        {!isLoading && (
+        {isComplete && (
           <div>
             <Table resultsKorean={resultsKorean} resultsEnglish={resultsEnglish} />
           </div>
