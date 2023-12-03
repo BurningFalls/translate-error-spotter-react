@@ -77,6 +77,7 @@ function App() {
       const koreanData = { text: textKorean };
       const englishData = {text: textEnglish};
 
+      setIsComplete(false);
       setIsLoading(true); // 데이터 요청 시작 시 isLoading을 true로 설정
 
       const [koreanResponse, englishResponse] = await Promise.all([
@@ -85,6 +86,7 @@ function App() {
       ]);
 
       setIsComplete(true);
+      setIsLoading(false);
 
       setResultsKorean(koreanResponse);
       setResultsEnglish(englishResponse);
@@ -116,7 +118,16 @@ function App() {
       <div className="main">
         <div className="header">
           <div className="large-text">TEST</div>
-          <div className="small-text">Translate Error SpotTer</div>
+          <div className="small-text">
+            <span className="highlight">T</span>
+            <span>ranslate&nbsp;</span>
+            <span className="highlight">E</span>
+            <span>rror&nbsp;</span>
+            <span className="highlight">S</span>
+            <span>pot</span>
+            <span className="highlight">T</span>
+            <span>er</span>
+          </div>
         </div>
         <hr />
         <div className="up-features">
@@ -168,8 +179,12 @@ function App() {
           </div>
         )}
 
-      <Footer/>
+        <div className="sticky-top">
+          <Footer/>
+        </div>
+
       </div>
+
     </div>
   );
 }

@@ -1,6 +1,15 @@
+.button-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 7px;
+}
+
+.change-button {
+    border-radius: 10px;
+}
+
 .table-container {
-    margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
     max-height: 700px; /* 테이블의 최대 높이 설정 (원하는 높이로 조절) */
     overflow-y: auto; /* 수직 스크롤 활성화 */
     border: 1px solid #ccc; /* 테두리 스타일 및 색상 설정 */
@@ -19,27 +28,32 @@
 
 .korean-sentence {
     text-align: right;
-    width: 38%;
+    width: 40%;
 }
 
 .korean-sentiment {
     text-align: right;
-    width: 7%;
+    width: 6%;
 }
 
 .comparison {
     text-align: center;
-    width: 10%;
+    width: 2%;
     font-size: 30px;
 }
 
 .english-sentiment {
     text-align: left;
-    width: 7%;
+    width: 6%;
 }
 
 .english-sentence {
     text-align: left;
-    width: 38%;
+    width: 40%;
+}
+
+.empty {
+    text-align: center;
+    font-size: 30px;
 }
 

@@ -27,10 +27,9 @@ textarea{
   outline: none;
   border: 1px solid #ccc;
   border-radius: 10px;
-  /*padding: 10px;           !* Optional: Adds some padding inside the textareas *!*/
   font-size: 16px;
   resize: none;
-  box-shadow: 0 2px 1.5px  0 #555555;
+  box-shadow: 0 2px 2px  0 #555555;
 }
 
 .verification-button {
@@ -52,6 +51,10 @@ textarea{
   font-size: 25px;
   display: flex;
   align-items: flex-end;
+}
+
+.highlight {
+  color: black;
 }
 
 .input-boxes {
@@ -127,4 +130,13 @@ textarea{
   justify-content: center;
   margin-top: 100px;
   margin-bottom: 100px;
+}
+
+.scroll-to-top-button {
+  display: flex;
+  justify-content: end;
+}
+
+.empty {
+  height: 300px;
 }
