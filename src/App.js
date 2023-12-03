@@ -24,6 +24,7 @@ function App() {
     language === 'korean' ? setTextKorean(newText) : setTextEnglish(newText);
   };
 
+
   const adjustHeight = () => {
     // Reset the height to 'auto' to allow the textareas to adjust to their content
     textarea1Ref.current.style.height = 'auto';
