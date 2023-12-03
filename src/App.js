@@ -5,6 +5,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import {MDBBtn, MDBIcon} from "mdb-react-ui-kit";
 import Footer from "./Footer";
+import Table from "./Table";
 
 function App() {
   const textarea1Ref = useRef(null);
@@ -82,8 +83,8 @@ function App() {
     }
   }, [textKorean, textEnglish, sendHttpRequest]);
 
-  console.log("korea", resultsKorean)
-  console.log("english", resultsEnglish)
+  // console.log("korea", resultsKorean)
+  // console.log("english", resultsEnglish)
 
   useEffect(() => {
     if (isButtonClicked) {
@@ -141,30 +142,9 @@ function App() {
           </MDBBtn>
         </div>
 
-        <div className="middle">
-          <div className="middle-box">
-            <div className="middle-box-wrap">
-              {resultsKorean.map((result, index) => (
-                <div key={index} className="middle-box-wrap-wrap-L">
-                  <div className="middle-sentiment-box-L">
-                    {result.sentiment}
-                  </div>
-                  <div className="middle-sentence-box">{result.sentence}</div>
-                </div>
-              ))}
-            </div>
-            <div className="middle-box-wrap">
-              {resultsEnglish.map((result, index) => (
-                <div key={index} className="middle-box-wrap-wrap-R">
-                  <div className="middle-sentiment-box-R">
-                    {result.sentiment}
-                  </div>
-                  <div className="middle-sentence-box">{result.sentence}</div>
-                </div>
-              ))}
-           </div>
-          </div>
-        </div>
+        <Table resultsKorean={resultsKorean} resultsEnglish={resultsEnglish} />
+
+
       <Footer/>
       </div>
     </div>

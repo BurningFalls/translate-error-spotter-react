@@ -1,0 +1,64 @@
+.middle{
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+}
+.middle-box{
+    display: flex;
+    flex-direction: row;
+}
+.middle-box-wrap{
+    flex: 1;
+}
+
+.middle-box-wrap-wrap-L{
+    display: flex;
+    min-height: 80px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    /*border-left: solid 0.5px;*/
+    /*border-top: solid 0.5px;*/
+    /*border-bottom: solid 0.5px;*/
+    /*margin-bottom: 10px;*/
+}
+.middle-box-wrap-wrap-R{
+
+    display: flex;
+    min-height: 80px;
+    flex-direction: column;
+    margin-bottom: 20px;
+    /*border-right: solid 0.5px;*/
+    /*border-top: solid 0.5px;*/
+    /*border-bottom: solid 0.5px;*/
+    /*margin-bottom: 10px;*/
+}
+.middle-sentiment-box-L{
+    flex: 1;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: snow;
+    border-top-left-radius: 16px;
+}
+
+.middle-sentiment-box-R{
+    height: 30px;
+    border-top-right-radius: 16px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: snow;
+
+}
+.middle-sentiment-box div{
+
+}
+.middle-sentence-box{
+    display: flex;
+    width: 100%;
+
+    flex: 1;
+    padding: 5px 0 0 5px;
+}

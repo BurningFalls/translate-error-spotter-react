@@ -1,0 +1,36 @@
+.table-container {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    max-height: 300px; /* 테이블의 최대 높이 설정 (원하는 높이로 조절) */
+    overflow-y: auto; /* 수직 스크롤 활성화 */
+}
+
+.data-table{
+
+}
+
+.korean-sentence {
+    text-align: right;
+    width: 30%;
+}
+
+.korean-sentiment {
+    text-align: right;
+    width: 15%;
+}
+
+.comparison {
+    text-align: center;
+    width: 10%;
+}
+
+.english-sentiment {
+    text-align: left;
+    width: 15%;
+}
+
+.english-sentence {
+    text-align: left;
+    width: 30%;
+}
+
