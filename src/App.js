@@ -67,6 +67,8 @@ function App() {
 // 예제: /classify/korean 경로로 요청 보내기
   const handleSubmit = useCallback(async () => {
     if (textKorean.trim() === '' || textEnglish.trim() === '') {
+      // 사용자에게 입력을 다시 하도록 메시지를 표시합니다.
+      alert('Please enter both Korean and English text.');
       return;
     }
 
@@ -75,7 +77,7 @@ function App() {
       const englishUrl = '/classify/english'; // 영어 분석 경로
 
       const koreanData = { text: textKorean };
-      const englishData = {text: textEnglish};
+      const englishData = { text: textEnglish };
 
       setIsComplete(false);
       setIsLoading(true); // 데이터 요청 시작 시 isLoading을 true로 설정
@@ -85,6 +87,13 @@ function App() {
         sendHttpRequest(englishUrl, englishData),
       ]);
 
+      // 결과의 길이가 다르면 에러 메시지를 표시하고 결과를 초기화합니다.
+      if (koreanResponse.length !== englishResponse.length) {
+        setResultsKorean([]);
+        setResultsEnglish([]);
+        throw new Error('Korean and English texts have different lengths. Please try again.');
+      }
+
       setIsComplete(true);
       setIsLoading(false);
 
@@ -92,6 +101,7 @@ function App() {
       setResultsEnglish(englishResponse);
     } catch (error) {
       console.error(error.message);
+      alert(error.message);
     } finally {
       setIsLoading(false); // 데이터 요청 완료 시 isLoading을 false로 설정
     }

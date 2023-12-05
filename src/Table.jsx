@@ -18,7 +18,7 @@ export default function Table(props) {
       <div className="button-container">
         <MDBBtnGroup shadow='0' className="change-button">
           <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-            <MDBBtn color='secondary' onClick={() => setShowMismatchedRows(false)}>
+            <MDBBtn color='primary' onClick={() => setShowMismatchedRows(false)}>
               전체 문장 보기
             </MDBBtn>
             <MDBBtn color='secondary' onClick={() => setShowMismatchedRows(true)}>
