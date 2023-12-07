@@ -28,12 +28,13 @@
 
 .korean-sentence {
     text-align: right;
-    width: 40%;
+    width: 36%;
 }
 
 .korean-sentiment {
     text-align: right;
-    width: 6%;
+    width: 10%;
+    font-size: 17px;
 }
 
 .comparison {
@@ -44,12 +45,13 @@
 
 .english-sentiment {
     text-align: left;
-    width: 6%;
+    width: 10%;
+    font-size: 17px;
 }
 
 .english-sentence {
     text-align: left;
-    width: 40%;
+    width: 36%;
 }
 
 .empty {

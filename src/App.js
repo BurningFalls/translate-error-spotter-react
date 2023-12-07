@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import {MDBBtn, MDBIcon, MDBSpinner} from "mdb-react-ui-kit";
 import Footer from "./Footer";
 import Table from "./Table";
+import Modal from "./Modal";
 
 function App() {
   const textarea1Ref = useRef(null);
@@ -137,6 +138,10 @@ function App() {
             <span>pot</span>
             <span className="highlight">T</span>
             <span>er</span>
+          </div>
+          <div className="header-empty-space"></div>
+          <div className="bert-button">
+            <Modal/>
           </div>
         </div>
         <hr />

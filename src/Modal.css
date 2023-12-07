@@ -1,0 +1,26 @@
+.modal-header-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-title {
+    width: 70%;
+}
+
+.dropdown {
+    width: 20%;
+}
+
+.btn-close {
+    width: 10%;
+}
+
+.dropdown-item-1 {
+    height: 36px;
+    padding: 7px 7px 7px 20px;
+}
+
+.dropdown-item-2 {
+    height: 36px;
+    padding: 7px 7px 7px 20px;
+}
