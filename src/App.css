@@ -23,14 +23,14 @@
   display: flex;
   line-height: 55px;
   align-items: flex-end;
-  width: 15%;
+  width: 11%;
 }
 
 .small-text {
   font-size: 25px;
   display: flex;
   align-items: flex-end;
-  width: 30%;
+  width: 34%;
 }
 
 .header-empty-space {
