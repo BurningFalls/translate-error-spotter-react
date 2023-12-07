@@ -24,3 +24,12 @@
     height: 36px;
     padding: 7px 7px 7px 20px;
 }
+
+.result-data {
+    display: flex;
+}
+
+.result-chart {
+    width: 100%;
+    height: 300px;
+}
