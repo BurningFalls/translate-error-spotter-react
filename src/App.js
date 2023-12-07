@@ -29,18 +29,10 @@ function App() {
   const adjustHeight = () => {
     // Reset the height to 'auto' to allow the textareas to adjust to their content
     textarea1Ref.current.style.height = 'auto';
-
     textarea2Ref.current.style.height = 'auto';
-    // Calculate the maximum height of both textareas
 
-    const maxHeight = Math.max(
-      textarea1Ref.current.scrollHeight,
-      textarea2Ref.current.scrollHeight
-    );
-    // Set both textareas to the maximum height
-    textarea1Ref.current.style.height = `${maxHeight}px`;
-    textarea2Ref.current.style.height = `${maxHeight}px`;
-
+    textarea1Ref.current.style.height = `${textarea1Ref.current.scrollHeight}px`;
+    textarea2Ref.current.style.height = `${textarea2Ref.current.scrollHeight}px`;
   };
 
   const sendHttpRequest = useCallback(async (url, requestBody) => {
@@ -123,7 +115,6 @@ function App() {
     // 여기에 아이콘을 클릭했을 때 할 작업을 추가할 수 있습니다.
   };
 
-
   return (
     <div className="app">
       <div className="main">
@@ -140,9 +131,7 @@ function App() {
             <span>er</span>
           </div>
           <div className="header-empty-space"></div>
-          <div className="bert-button">
-            <Modal/>
-          </div>
+          <Modal/>
         </div>
         <hr />
         <div className="up-features">
