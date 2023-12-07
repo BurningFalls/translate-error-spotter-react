@@ -381,7 +381,3 @@ buck-out/
 
 # production
 /build
-
-# package
-package.json
-package-lock.json
