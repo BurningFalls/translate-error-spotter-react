@@ -19,7 +19,10 @@ export default function Modal() {
   const [selectedLanguage, setSelectedLanguage] = useState('한글'); // 기본 언어 선택
   const [isLoadData, setLoadData] = useState(false);
 
-  const toggleOpen = () => setBasicModal(!basicModal);
+  const toggleOpen = () =>  {
+    setBasicModal(!basicModal);
+    setLoadData(false);
+  }
 
   const handleLanguageChange = (language) => {
     setSelectedLanguage(language);
